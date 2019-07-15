@@ -1,0 +1,357 @@
+<!--
+
+     /\| |/\      (_)
+     \ ` ' /       _  ___
+    |_     _|     | |/ __|
+     / ,   \  _   | |\__ \
+     \/|_|\/ (_)  | ||___/
+                 _/ |
+                |__/
+https://www.toutjavascript.com : Y a pas encore tout, mais j'y travaille...
+
+ -->
+<!DOCTYPE html>
+<html dir="ltr" prefix="og: http://ogp.me/ns#" class="" lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><meta name="author" content="Olivier Hondermarck"><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/cssminify.css" as="style"><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/jsminify.css" as="script"><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/fontawesome5.css" as="style"><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/all5.css" as="style"><link rel="preload" href="https://www.toutjavascript.com/assets/webfonts/fa-solid-900.woff2" as="font" crossorigin="anonymous"><link rel="shortcut icon" href="https://www.toutjavascript.com/favicon.ico"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="pragma" content="no-cache"><meta http-equiv="expires" content="mon, 27 sep 2005 10:30:00 GMT"><link href="https://pagead2.googlesyndication.com/" rel="dns-prefetch"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Language" content="fr"><meta name="msapplication-config" content="none"><meta name="format-detection" content="telephone=no"><meta property="og:type" content="website"><meta property="og:image" content="https://www.toutjavascript.com/gif/logo-tjs-og300.png"><meta property="og:image:width" content="300"><meta property="og:image:height" content="300"><meta property="og:image:type" content="image/png"><meta property="og:site_name" content="Tout JavaScript.com"><meta property="og:title" content="Accéder au formulaire par JavaScript - Les tutoriaux de Tout JavaScript.com"><meta property="og:url" content="https://www.toutjavascript.com/savoir/savoir06_2.php3"><meta property="og:description" content="Manipuler les formulaires, contrôler les saisies et assister les utilisateurs"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@toutjavascript"><meta name="twitter:title" content="Accéder au formulaire par JavaScript - Les tutoriaux de Tout JavaScript.com"><meta name="twitter:description" content="Manipuler les formulaires, contrôler les saisies et assister les utilisateurs"><meta name="theme-color" content="#ffffff"><title>Accéder au formulaire par JavaScript - Les tutoriaux de Tout JavaScript.com</title><link rel="canonical" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/savoir06_2_006.html"><meta name="description" content="Manipuler les formulaires, contrôler les saisies et assister les utilisateurs"><link rel="StyleSheet" id="cssminify" type="text/css" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/cssminify.css"><script src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/reactive_library.js"></script><script src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/osd.js"></script><script type="text/javascript" async="" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/js.js"></script><script src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/ca-pub-4954616225886678.js"></script><script src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/show_ads_impl.js" id="google_shimpl"></script><script async="" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/analytics.js"></script><script async="" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-4954616225886678",enable_page_level_ads: true});
+var cleanMyJS={dt:new Date(),id:'',nb:0};
+cleanMyJS.id=cleanMyJS.dt.getTime(); 
+window.addEventListener('error',function(e) {
+cleanMyJS.nb++
+console.log('logjs:sending');
+var ajax=new XMLHttpRequest();
+ajax.onload=function(){console.log('logjs:'+this.response);};
+ajax.open('POST','https://www.cleanmyjs.com/ini/log.php',true);
+var data=new FormData();
+var err=e.error, time=0;
+if(err==null){err=e;}
+if(performance){if(performance.now){time=performance.now();}}
+data.append('id',cleanMyJS.id);
+data.append('nb',cleanMyJS.nb);
+data.append('time',time);
+data.append('name',err.name);
+data.append('message',err.message);
+data.append('stack',err.stack);
+data.append('url',window.location.href);
+ajax.send(data);
+});</script><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/integrator.js" as="script"><script type="text/javascript" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/integrator.js"></script><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/integrator_002.js" as="script"><script type="text/javascript" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/integrator_002.js"></script><link rel="preload" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/show_ads_impl.js" as="script"></head><body data-source="tjs"><style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-T876WP9':true});</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-84779837-1', 'auto');ga('require', 'GTM-T876WP9');ga('send', 'pageview');</script><div class="tjs__header"><div class="container gutters items-center justify-space-around text-center"><div class="col-12 col-sm-4 "><a href="https://www.toutjavascript.com/main/index.php3"><img src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/logo01.gif" alt="Retourner à la page d'accueil de TJS" title="Retourner à la page d'accueil de TJS" height="60"></a></div><div class="col-12 col-sm-8 "><a href="https://www.toutjavascript.com/livre/index.php" class="btn radius btn-sm btn-orange btn-outline cursor-pointer ">Livre</a><a href="https://www.toutjavascript.com/reference/index.php" class="btn radius btn-sm btn-orange btn-outline cursor-pointer ">Référence</a><a href="https://www.toutjavascript.com/savoir/savoir.php3" class="btn radius btn-sm btn-orange btn-orange-active btn-outline cursor-pointer">Tutos</a><a href="https://www.toutjavascript.com/main/tous.php3" class="btn radius btn-sm btn-orange btn-outline cursor-pointer">Scripts</a><a href="https://www.toutjavascript.com/forum/" class="btn radius btn-sm btn-orange btn-outline cursor-pointer">Forums</a><a href="https://www.toutjavascript.com/faq/index.php3" class="btn radius btn-sm btn-orange btn-outline cursor-pointer">FAQ</a><a href="https://www.toutjavascript.com/tools/index.php" class="btn radius btn-sm btn-orange btn-outline cursor-pointer">Tools</a></div></div></div><div id="tjs__page"><div class="container justify-space-around"><div id="tjs__contenu" class="col-12 col-sm-8"><div class="breadcrumbs_container"><div class="breadcrumbs"><ul id="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li><a href="https://www.toutjavascript.com/"><span>TJS</span></a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.toutjavascript.com/savoir/savoir.php3"><span itemprop="name">Tutoriaux</span></a><meta itemprop="position" content="1"></li> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.toutjavascript.com/savoir/savoir.php3#tuto7"><span itemprop="name">JavaScript et formulaires</span></a><meta itemprop="position" content="2"></li> <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.toutjavascript.com/savoir/savoir06_2.php3"><span itemprop="name">JavaScript : accéder au formulaire</span></a><meta itemprop="position" content="3"></li></ul></div></div><h1>Accéder au formulaire par JavaScript</h1><div class="tjs-tuto-interieur" style="min-width:300px;"><!-- tjs-tuto-interieur --><ins class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-4954616225886678" data-ad-slot="3511510129" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:310px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:310px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:310px;height:250px;" width="310" height="250" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div><div id="tutoContainer"><script type="text/javascript">/* Surcharge de la console par TJSconsole */var TJSconsole = {readys: [false, false, false, false, false, false, false, false], /* Indique si les div sont bien créés */timers: [],objects: [],clear: function(numExemple) {document.getElementById('exempleresult_ref_log'+numExemple).innerHTML=' ';if (this.readys[numExemple]) {this.show(numExemple);}},herite: function(obj) {/* document.getElementById('breadcrumbs').__proto__.__proto__.__proto__.__proto__.constructor.name */var p=Object.getPrototypeOf(obj);var heritages=[];while (p !== null) {heritages[heritages.length]=p.constructor.name;p=Object.getPrototypeOf(p);}return heritages;},warn: function(numExemple, txt) {var timeStamp=this.getTimestamp();console.warn(txt);if (txt === null) {return false;}txt=this.htmlentities(txt.toString());txt="<span class='console_warn'>"+txt+"</span>";document.getElementById('exempleresult_ref_log'+numExemple).innerHTML+='<div class="console_line console_warn" data-timestamp="'+timeStamp+'">'+txt+'</div>';if (this.readys[numExemple]) {this.show(numExemple);}},error: function(numExemple, txt) {var timeStamp=this.getTimestamp();console.error(txt);if (txt === null) {return false;}txt=this.htmlentities(txt.toString());txt="<span class='console_error'>"+txt+"</span>";document.getElementById('exempleresult_ref_log'+numExemple).innerHTML+='<div class="console_line console_error" data-timestamp="'+timeStamp+'">'+txt+'</div>';if (this.readys[numExemple]) {this.show(numExemple);}},log: function(numExemple, txt) {var timeStamp=this.getTimestamp();console.log(txt);var idDiv='';if (txt === null) {txt="<span class='console_other'>null</span>";} else if (txt.constructor.name === "Array") { var tab=txt;txt=this.htmlentities('Array('+tab.length+') [');var nb=0;for (var i in tab) {if (tab[i].constructor === Number) {txt+="<span class='console_number'>"+this.htmlentities(tab[i].toString())+'</span>';} else if (tab[i].constructor === String) {txt+='"'+"<span class='console_string'>"+this.htmlentities(tab[i].toString())+'</span>'+'"';} else if (tab[i].constructor.name === "Array") {txt+="<div style=\"padding-left:10px;\">\"<span class='console_string'>"+this.htmlentities(i)+"</span>\" Array("+tab[i].length+") [";/* Boucle du tableau */for (var k=0; k<tab[i].length; k++) {if (typeof txt === 'number') {txt+="<span class='console_number'>"+this.htmlentities(tab[i][k].toString())+"</span>";} else {txt+="<span class='console_string'>"+this.htmlentities(tab[i][k])+"</span>";}txt+=", ";}txt+="</div>";} else {txt+="<span class='console_other'>"+this.htmlentities(tab[i].toString())+'</span>';}nb++; if (nb<tab.length) {txt+=', ';}}txt+=']';} else if (typeof txt === 'object') {var obj=txt;txt=obj.constructor.name+' {';var properties=new Array();var names=Object.getOwnPropertyNames(obj);var nbItem=0;for (var i=0; i<names.length; i++) {if (obj[names[i]]) {nbItem++;properties[i]="<span class='console_key'>"+this.htmlentities(names[i])+'</span>: ';if (obj[names[i]].constructor === Number) {properties[i]+="<span class='console_number'>"+this.htmlentities(obj[names[i]].toString())+"</span>";} else if (obj[names[i]].constructor === String) {properties[i]+='"'+"<span class='console_string'>"+this.htmlentities(obj[names[i]])+"</span>"+'"';} else if (obj[names[i]].constructor === Function) {properties[i]+="<span class='console_function'>"+this.htmlentities('function()')+"</span>";} else {properties[i]+="<span class='console_other'>"+this.htmlentities(obj[names[i]])+"</span>";};}}txt+=properties.join(', ');txt+='}';if (nbItem==0) {idDiv=Math.round(Math.random()*1000000);this.objects[idDiv]=txt;}} else if (typeof txt === 'number') {txt="<span class='console_number'>"+this.htmlentities(txt.toString())+"</span>";} else if (typeof txt === 'string') {txt="<span class='console_string'>"+this.htmlentities(txt)+"</span>";txt=txt.replace(/(&#10;)/gi, "<br>");} else {txt=this.htmlentities(txt.toString());txt=txt.replace(/(&#10;)/gi, "<br>");}var more='';if (idDiv!='') {more='<i class="fa fa-lg fa-caret-square-o-right help btn-more" title="Cliquez pour plus de détails" onclick="TJSconsole.toggleDetail('+idDiv+')"></i> ';txt+="<div class='console_detail'>";var heritages=this.herite(obj);if (heritages.length>1) {txt+="<div class='console_heritage'> <b class='fa help fa-info-circle' title='Cette ligne supplémentaire n’est pas affichée dans la vraie console'></b> Héritage Objet : ";for (var j=0; j<heritages.length; j++) {if (j>0) {txt+=" <b class='fa fa-arrow-left'></b> ";}txt+="<span>"+this.htmlentities(heritages[j])+"</span>";}txt+="</div>";}for (var j in obj) {if (obj[j]) {txt+='<span class="console_key">'+this.htmlentities(j)+'</span>: ';if (obj[j].constructor === Number) {txt+="<span class='console_number'>"+(obj[j].toString())+"</span>";} else if (obj[j].constructor === String) {txt+='"'+"<span class='console_string'>"+this.htmlentities(obj[j])+"</span>"+'"';} else if (obj[j].constructor === Function) {txt+="<span class='console_function'>"+this.htmlentities('function()')+"</span>";} else {txt+="<span class='console_other'>"+(obj[j].toString())+"</span>";};txt+='<br>';}}txt+="</div>";}document.getElementById('exempleresult_ref_log'+numExemple).innerHTML+='<div id="'+idDiv+'" class="console_line" data-timestamp="'+timeStamp+'">'+more+txt+'</div>';if (this.readys[numExemple]) {this.show(numExemple);}},table: function(numExemple, txt) {if (console.table) {console.table(txt);}if (txt.constructor.name === "Array") { var tab=txt;txt="<table><tr><th>Index</th><th>Valeur</th></tr>";var nb=0;for (var i in tab) {txt+="<tr><td><span class='console_key'>"+this.htmlentities(i.toString())+"</span></td><td>";if (tab[i].constructor === Number) {txt+="<span class='console_number'>"+this.htmlentities(tab[i].toString())+'</span>';} else if (tab[i].constructor === String) {txt+='"'+"<span class='console_string'>"+this.htmlentities(tab[i].toString())+'</span>'+'"';} else {txt+="<span class='console_other'>"+this.htmlentities(tab[i].toString())+'</span>';}nb++; txt+="</td>";}txt+='</table>';} else {this.log(numExemple, txt);}document.getElementById('exempleresult_ref_log'+numExemple).innerHTML+='<div class="console_line">'+txt+'</div>';if (this.readys[numExemple]) {this.show(numExemple);}},time:function(numExemple, timer) {if (timer === null) {timer='default';}this.timers[timer]=this.getTimer();console.time(timer);},timeEnd:function(numExemple, timer) {if (timer === null) {timer='default';}var t=Math.round((this.getTimer()-this.timers[timer])*1000)/1000;console.timeEnd(timer);var txt=timer+': '+t+' ms';document.getElementById('exempleresult_ref_log'+numExemple).innerHTML+='<div class="console_line">'+this.htmlentities(txt)+'</div>';if (this.readys[numExemple]) {this.show(numExemple);}},show: function(numExemple) {if (document.getElementById('exempleresult_ref_log'+numExemple).innerHTML!='') {document.getElementById('exempleresult_ref_blocconsole'+numExemple).style.display='block';document.getElementById('exempleresult_ref_console'+numExemple).innerHTML = document.getElementById('exempleresult_ref_log'+numExemple).innerHTML;}this.readys[numExemple]=true;},toggleDetail: function(idDiv) {console.log('toggleDetail '+idDiv);$('div#'+idDiv+' div.console_detail').toggle();$('div#'+idDiv+' i.fa').toggleClass('fa-caret-square-o-right').toggleClass('fa-caret-square-o-down');},htmlentities: function(c) {var e='';if (c) {for (var i=0; i<c.length; i++) {e+='&#'+c.charCodeAt(i)+';';}}return e;},getTimer: function() { /* Outils de log et timers performances */if (typeof window.performance !== undefined) {return Math.round(window.performance.now()*100)/100;} else {var d=new Date();return d.getTime();}},getTimestamp: function() {var dt=new Date();var h=dt.getHours();h = h>=10 ? h : "0"+h; var m=dt.getMinutes();m = m>=10 ? m : "0"+m; var s=dt.getSeconds();s = s>=10 ? s : "0"+s; var ms=dt.getMilliseconds();ms = "00"+ms;ms = ms.substring(ms.length-3,ms.length);return h+":"+m+":"+s+"."+ms; }};function tjsTutoExecute(name) {var tjstutos=document.querySelectorAll("pre#"+name);for (var i=0; i<tjstutos.length; i++) {var tjstuto=tjstutos[i];if (typeof tjstuto == 'object') {tjstuto.className+=' exemplesource_ref';if (tjstuto.dataset.type=='js') {var h=tjstuto.innerHTML;h=h.replace(/(\&lt\;)/g,"<");h=h.replace(/(\&amp\;)/g,"&");h=h.replace(/(\&gt\;)/g,">");h=h.replace(/(\&quote\;)/g,'"');h=h.replace(/(\&nbsp\;)/g,' ');h=h.replace(/(console.log\()/g, "TJSconsole.log('"+name+"',");h=h.replace(/(console.warn\()/g, "TJSconsole.warn('"+name+"',");h=h.replace(/(console.error\()/g, "TJSconsole.error('"+name+"',");h=h.replace(/(console.table\()/g, "TJSconsole.table('"+name+"',");document.write("<scr"+"ipt>"+h+"</scr"+"ipt>"); if (tjstuto.dataset.view=='hidden') { /* Caché par défaut */var elt=document.createElement('div');elt.innerHTML='Afficher/Cacher le code JavaScript';elt.setAttribute("onclick", "this.nextSibling.style.display = (this.nextSibling.style.display == 'none' ? 'block' : 'none')");elt.setAttribute("class", "showCode");document.getElementById('tutoContainer').insertBefore(elt, tjstuto);tjstuto.style.display='none';}}if (tjstuto.dataset.type=='html') {var h=tjstuto.innerHTML;h=h.replace(/(\&lt\;)/g,"<");h=h.replace(/(\&gt\;)/g,">");h=h.replace(/(\&quote\;)/g,'"');h=h.replace(/(console.log\()/g, "TJSconsole.log('"+name+"',");document.write(h); }if (tjstuto.dataset.type=='css') {document.write("<style type='text/css'>"+tjstuto.innerHTML+"</style>"); }}}}</script><h2 class=" tjstutoplan100">Principe général</h2>
+Les éléments de formulaire de la page sont aussi des objets manipulables en JavaScript (Voir aussi la page <a href="https://www.toutjavascript.com/savoir/savoir01.php3">JavaScript, langage Objet</a>, pour une présentation de ce type de programmation).<br>
+Cette page présente l'accès par JavaScript aux objets du formulaire.<br>
+
+<div class="clear"></div>
+
+<p>Commençons par le formulaire simple suivant :
+</p><form name="general">
+<input type="text" name="champ1" value="Valeur initiale">
+</form>
+
+<pre>&lt;form name="general"&gt;
+  &lt;input type="text" name="champ1" value="Valeur initiale"&gt;
+&lt;/form&gt;
+</pre>
+<span class="titre3">Accéder au formulaire</span><br>
+Le formulaire est un élément de l'objet <span class="code">document</span>.
+Pour accéder au formulaire <span class="code">general</span>, on peut écrire :<br>
+
+<pre class="code js">document.forms["general"]</pre>
+ou
+<pre class="code js">document.forms[0]</pre>
+ou
+<pre class="code js">document.general</pre>
+
+<p><span class="code"><b>forms</b></span> est le tableau des formulaires de <span class="code">document</span>. On peut accéder à un formulaire par son nom ou par son indice (commençant à l'indice 0), via le tableau <span class="code">elements</span> ou directement par son nom<br>
+
+
+
+</p><h3 class=" tjstutoplan841">Accéder à un élément</h3>
+<p>Pour accéder maintenant à la zone de texte, on écrit :
+
+</p><pre class="code js">document.forms["general"].elements["champ1"]</pre>
+ou
+<pre class="code js">document.forms["general"].elements[0]</pre>
+ou
+<pre class="code js">document.forms["general"].champ1</pre>
+
+<p><span class="code"><b>elements</b></span> est le tableau de tous les 
+éléments du formulaire. On peut accéder à un élément par son nom ou par 
+son indice, ou directement par son nom.
+
+</p><p>Remarques :<br>
+</p><ol>
+<li>Il est préférable d'utiliser le nom des éléments, plutôt que les 
+indices : les noms sont indépendants de l'organisation et de l'affichage
+ du formulaire.<br>
+</li><li>Les tableaux <span class="code">forms</span> et <span class="code">elements</span> peuvent sembler inutiles dans les exemples ci-dessus. Observez ce script pour vous convaincre du contraire :<br>
+<pre class="code js">var nom_du_champ="champ1";
+document.forms["general"].elements[nom_du_champ];
+</pre>
+
+Ici, on peut accéder à un élément de formulaire dont le nom est contenu dans une variable JavaScript.<br>
+</li></ol>
+
+<h3 class=" tjstutoplan1402">Manipuler les propriétés d'un élément</h3>
+Une fois que l'élément est atteint, il est possible de manipuler ces propriétés.<br>
+Par exemple, pour placer dans la zone de texte le mot "NOUVEAU", il faut juste écrire :<br>
+<form name="manip">
+	<pre class="code js">document.forms["general"].elements["champ1"].<b>value</b>="NOUVEAU"</pre>
+	
+	Cliquez sur ce bouton et observez le premier formulaire 
+	<input type="button" value="Changer la zone de texte" onclick=' document.forms["general"].elements["champ1"].value="NOUVEAU" '>
+</form>
+
+
+<h3 class=" tjstutoplan1555">Appeler une méthode sur un élément</h3>
+<p>Pour donner le focus au champ texte du haut de cette page, il faut appeler la méthode <span class="code">focus()</span> sur cet élément.<br>
+</p><form>
+
+	<pre class="code js">document.forms["general"].elements["champ1"].focus();</pre>
+	<p>Cliquez sur ce bouton 
+	<input type="button" value="Donner le focus" onclick='document.forms["general"].elements["champ1"].focus()'><br>
+
+</p></form>
+
+
+<a name="evenement"></a>
+<h2 class=" tjstutoplan1710">Intégrer du JavaScript dans un événement</h2>
+<h3 class=" tjstutoplan1745">Un exemple d'événement</h3>
+<p>Un événement d'un élément de formulaire est déclenché par le 
+navigateur en réaction à une action ou un changement d'état détecté.<br>
+L'<a href="https://www.toutjavascript.com/savoir/savoir00.php3">introduction à JavaScript</a>
+ présente les différentes manières d'insérer du JavaScript. Il est utile
+ de rappeler comment intégrer du JavaScript dans un événement.<br>
+L'événement le plus classique est le clic sur un bouton appelé <span class="code">onclick</span><br>
+
+</p><p>Reprenons le même exemple, il s'agit de placer "NOUVEAU" dans la zone de texte du formulaire.<br>
+</p><form name="changer">
+	<input type="text" name="zonetexte" value="Valeur initiale"><br>
+	<input type="button" value="Changer la zone de texte" onclick=' document.forms["changer"].elements["zonetexte"].value="NOUVEAU" '><br>
+	<p>Voici le script correspondant :<br>
+</p><pre class="code html">&lt;form name="changer"&gt;
+  &lt;input type="text" name="zonetexte" value="Valeur initiale"&gt;
+  &lt;input type="button" value="Changer la zone de texte"
+    onclick=' document.forms["changer"].elements["zonetexte"].value = "NOUVEAU" '&gt;
+&lt;/form&gt;
+</pre>
+</form>
+<p>Dans le bouton, on a rajouté l'événement <span class="code">onclick</span> qui reçoit le code JavaScript à exécuter lors du clic sur le bouton.<br>
+La syntaxe est : <br>
+</p><pre class="code">onclick=' document.forms["changer"].elements["zonetexte"].value = "Encore nouveau" '&gt;</pre><div style="text-align: center; width: 100%; height: auto; clear: none;" class="google-auto-placed ap_container"><ins style="display: block; margin: auto; background-color: transparent;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4954616225886678" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent;"><ins id="aswift_4_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0px;width:775px;height:194px;" width="775" height="194" frameborder="0"></iframe></ins></ins></ins></div>
+<p>Le code JavaScript doit se mettre entre " ou entre '. Il faut faire très attention à alterner les " et '. On peut écrire :<br>
+</p><pre class="code">onclick='alert("Bonjour")'&gt;</pre>
+ou
+<pre class="code">onclick="alert('Bonjour')"&gt;</pre>
+
+<h3 class=" tjstutoplan2406">L'objet <b>this</b></h3>
+Il est fastidieux d'accéder aux éléments de formulaire par toute la chaîne <span class="code">document.forms.elements</span>. Un objet JavaScript <span class="code">this</span> permet de raccourcir ce chemin d'accès.<br>
+<span class="code">this</span> représente l'objet JavaScript en cours.<br>
+<form name="formfocus">
+	<input type="text" name="champtexte" value="contenu" onfocus="window.status=this.name" onblur="window.status=''"><br>
+
+<p>Donnez le focus à cette zone de texte, un message apparaît dans la console pour indiquer son nom.<br>
+Voici le code source simplifié par <span class="code">this</span> :<br>
+</p><pre id="this" data-type="html" class=" exemplesource_ref">&lt;form name="formfocus"&gt;
+  &lt;input type="text" name="champtexte" value="contenu" onfocus="console.log('Focus sur '+this.name)"&gt;
+&lt;/form&gt;
+</pre>
+<p><span class="code">this</span> est une référence à l'objet en cours de manipulation. Pas besoin de se soucier d'écrire un équivalent qui serait ici 
+</p><pre class="code js">document.forms["formfocus"].elements["champtexte"].name</pre>
+<br><div class="exempleresult_ref_log" id="exempleresult_ref_logthis"></div> <div class="exempleresult_ref"><script>tjsTutoExecute("this");</script>
+  <input type="text" name="champtexte" value="contenu" onfocus="TJSconsole.log('this','Focus sur '+this.name)">
+
+ </div></form><div class="exempleresult_ref_blocconsole" id="exempleresult_ref_blocconsolethis"><span class="titre_ref3">Emulation de la console <i class="fa fa-question-circle help"></i></span><span class="console_combo"><i class="fab undefined" style="margin-right:4px;"></i>Firefox 65 - Ouverture console avec :&nbsp;<b>undefined</b></span><div class="exempleresult_ref_console" id="exempleresult_ref_consolethis"></div></div> <script type="text/javascript">TJSconsole.show('this');</script> 
+
+<h3 class=" tjstutoplan2825">Encore un exemple avec <b>this</b></h3>
+<p>Reprenons encore une fois notre champ texte qui peut voir son contenu changer lors du clic sur un bouton :
+</p><pre id="this2" data-type="html" class=" exemplesource_ref">&lt;form&gt;
+  &lt;input type="text" name="zonedetexte" value="Valeur initiale"&gt;
+  &lt;input type="button" value="Changer le contenu" onclick=' this.form.zonedetexte.value="NOUVEAU" '&gt;
+&lt;/form&gt;
+</pre><div style="text-align: center; width: 100%; height: auto; clear: none;" class="google-auto-placed ap_container"><ins style="display: block; margin: auto; background-color: transparent;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4954616225886678" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent;"><ins id="aswift_5_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0px;width:775px;height:194px;" width="775" height="194" frameborder="0"></iframe></ins></ins></ins></div>
+
+<p>Grâce à <span class="code">this.form</span>, on peut accéder au formulaire de l'élément en cours. Le chemin pour accéder à <span class="code">zonedetexte</span> est ensuite classique.<br>
+<br></p><div class="exempleresult_ref_log" id="exempleresult_ref_logthis2"></div> <div class="exempleresult_ref"><script>tjsTutoExecute("this2");</script><form>
+  <input type="text" name="zonedetexte" value="Valeur initiale">
+  <input type="button" value="Changer le contenu" onclick=' this.form.zonedetexte.value="NOUVEAU" '>
+</form>
+ </div><div class="exempleresult_ref_blocconsole" id="exempleresult_ref_blocconsolethis2"><span class="titre_ref3">Emulation de la console <i class="fa fa-question-circle help"></i></span><span class="console_combo"><i class="fab undefined" style="margin-right:4px;"></i>Firefox 65 - Ouverture console avec :&nbsp;<b>undefined</b></span><div class="exempleresult_ref_console" id="exempleresult_ref_consolethis2"></div></div> <script type="text/javascript">TJSconsole.show('this2');</script> 
+
+
+<h2 class=" tjstutoplan3122">L'accès aux éléments de type input</h2>
+
+<h3 class=" tjstutoplan3157">Les zones de texte</h3>
+La principale action en JavaScript sur une zone de texte est de manipuler son contenu.<br>
+Imaginons un formulaire appelé <span class="code">monform</span> qui possède un champ texte appelé <span class="code">monchamp</span>. On accède au contenu du champ par :<br>
+<pre class="code js">document.forms["monform"].elements["monchamp"].value</pre>
+
+<p>Il faut bien penser à ajouter la propriété <span class="code">.value</span> pour accéder au contenu. 
+
+</p><h3 class=" tjstutoplan3336">Les boutons</h3>
+<p>Un bouton sert principalement à déclencher une action JavaScript.<br>
+Nous avons déjà vu comment dans le paragraphe <a href="#evenement">Intégrer du JavaScript dans un événement</a> comment détecter le click sur un bouton.<br>
+</p><p>La propriété <span class="code">value</span> contient le libellé du bouton. Comme pour une zone de texte, ce libellé est accessible et modifiable.<br>
+<br>
+
+</p><form>
+<h3 class=" tjstutoplan3508">Les cases à cocher</h3>
+<p>Pour détecter qu'une case est cochée, il faut utiliser sa propriété <span class="code">checked</span><br>
+</p><pre id="checked" data-type="html" class=" exemplesource_ref">&lt;form&gt;
+&lt;input type="checkbox" name="majeur"&gt;Majeur
+&lt;input type="checkbox" name="etudiant"&gt;Etudiant
+&lt;input type="button" value="Tester" onclick="console.log('Majeur : '+this.form.majeur.checked+'\nEtudiant : '+this.form.etudiant.checked);"&gt;
+&lt;/form&gt;
+</pre>
+<p><span class="code">checked</span> est de type booléen. Il contient <span class="code">true</span> pour vrai et <span class="code">false</span> pour faux.<br>
+<br></p><div class="exempleresult_ref_log" id="exempleresult_ref_logchecked"></div> <div class="exempleresult_ref"><script>tjsTutoExecute("checked");</script>
+<input type="checkbox" name="majeur">Majeur
+<input type="checkbox" name="etudiant">Etudiant
+<input type="button" value="Tester" onclick="TJSconsole.log('checked','Majeur : '+this.form.majeur.checked+'\nEtudiant : '+this.form.etudiant.checked);">
+
+ </div></form><div class="exempleresult_ref_blocconsole" id="exempleresult_ref_blocconsolechecked"><span class="titre_ref3">Emulation de la console <i class="fa fa-question-circle help"></i></span><span class="console_combo"><i class="fab undefined" style="margin-right:4px;"></i>Firefox 65 - Ouverture console avec :&nbsp;<b>undefined</b></span><div class="exempleresult_ref_console" id="exempleresult_ref_consolechecked"></div></div> <script type="text/javascript">TJSconsole.show('checked');</script> 
+
+
+<h3 class=" tjstutoplan3819">Les radio-boutons</h3>
+<p>Imaginons ce sondage :<br>
+</p><pre id="radio" data-type="html" class=" exemplesource_ref">&lt;form&gt;
+  Vous utilisez comme système d'exploitation :&lt;br&gt;
+  &lt;input type="radio" name="os" value="Windows" checked&gt; Windows 
+  &lt;input type="radio" name="os" value="Linux"&gt; Linux
+  &lt;input type="radio" name="os" value="Mac"&gt; Mac 
+  &lt;input type="button" value="Tester" onclick="testerRadio(this.form.os)"&gt;&lt;br&gt;
+&lt;/form&gt;
+</pre>
+
+<p>Et la fonction pour tester la sélection :<br>
+</p><pre id="radio" data-type="js" class=" exemplesource_ref">function testerRadio(radio) {
+  for (var i=0; i&lt;radio.length;i++) {
+    if (radio[i].checked) {
+      console.log("Système = "+radio[i].value)			
+    }
+  }
+}
+</pre>
+
+<p>Le formulaire donne ce résultat. Cliquez sur le bouton Tester
+<br></p><div class="exempleresult_ref_log" id="exempleresult_ref_logradio"></div> <div class="exempleresult_ref"><script>tjsTutoExecute("radio");</script><form>
+  Vous utilisez comme système d'exploitation :<br>
+  <input type="radio" name="os" value="Windows" checked="checked"> Windows 
+  <input type="radio" name="os" value="Linux"> Linux
+  <input type="radio" name="os" value="Mac"> Mac 
+  <input type="button" value="Tester" onclick="testerRadio(this.form.os)"><br>
+</form>
+<script>function testerRadio(radio) {
+  for (var i=0; i<radio.length;i++) {
+    if (radio[i].checked) {
+      TJSconsole.log('radio',"Système = "+radio[i].value)			
+    }
+  }
+}
+</script> </div><div class="exempleresult_ref_blocconsole" id="exempleresult_ref_blocconsoleradio"><span class="titre_ref3">Emulation de la console <i class="fa fa-question-circle help"></i></span><span class="console_combo"><i class="fab undefined" style="margin-right:4px;"></i>Firefox 65 - Ouverture console avec :&nbsp;<b>undefined</b></span><div class="exempleresult_ref_console" id="exempleresult_ref_consoleradio"></div></div> <script type="text/javascript">TJSconsole.show('radio');</script> 
+
+
+<p>La gestion des radio-boutons est assez particulière, car tous les 
+éléments ont le même nom. La déclaration du formulaire crée un groupe de
+ radio-boutons liés : le nom du groupe est <span class="code">os</span>.<br>
+La fonction JavaScript a comme paramètre le groupe des radio-boutons.<br>
+Une boucle parcourt la liste des boutons du groupe. On repère le bouton qui a la propriété <span class="code">checked</span> à <span class="code">true</span> et on affiche alors la valeur correspondante.<br>
+
+
+</p><h2 class=" tjstutoplan4441">L'accès aux éléments de type select</h2>
+<pre id="select" data-type="html" class=" exemplesource_ref">&lt;form name="formselect"&gt;
+  &lt;select name="liste" size=1&gt;
+    &lt;option value="valeur ligne 1"&gt;Libellé ligne 1&lt;/option&gt;
+    &lt;option value="valeur ligne 2"&gt;Libellé ligne 2&lt;/option&gt;
+    &lt;option value="valeur ligne 3"&gt;Libellé ligne 3&lt;/option&gt;
+    &lt;option value="valeur ligne 4"&gt;Libellé ligne 4&lt;/option&gt;
+  &lt;/select&gt;&lt;br&gt;
+&lt;/form&gt;
+</pre>
+
+<br><div class="exempleresult_ref_log" id="exempleresult_ref_logselect"></div> <div class="exempleresult_ref"><script>tjsTutoExecute("select");</script><form name="formselect">
+  <select name="liste" size="1">
+    <option value="valeur ligne 1" selected="selected">Libellé ligne 1</option>
+    <option value="valeur ligne 2">Libellé ligne 2</option>
+    <option value="valeur ligne 3">Libellé ligne 3</option>
+    <option value="valeur ligne 4">Libellé ligne 4</option>
+  </select><br>
+</form>
+ </div><div class="exempleresult_ref_blocconsole" id="exempleresult_ref_blocconsoleselect"><span class="titre_ref3">Emulation de la console <i class="fa fa-question-circle help"></i></span><span class="console_combo"><i class="fab undefined" style="margin-right:4px;"></i>Firefox 65 - Ouverture console avec :&nbsp;<b>undefined</b></span><div class="exempleresult_ref_console" id="exempleresult_ref_consoleselect"></div></div> <script type="text/javascript">TJSconsole.show('select');</script> 
+
+<p>En JavaScript, la structure d'un élément de type select reprend ce schéma :<br>
+</p><table cellspacing="0" cellpadding="2" border="1"><tbody><tr>
+	<td class="code" width="180">name</td>
+	<td class="texte" width="300">Nom de la liste</td>
+	<td>&nbsp;</td>
+</tr><tr>
+	<td class="code" width="180">selectedIndex</td>
+	<td class="texte" width="300">Indice de la ligne sélectionnée<br>(ligne 1 : indice=0)</td>
+	<td><input type="button" value="Voir selectedIndex" onclick="alert('Indice de la ligne sélectionnée : '+document.formselect.elements['liste'].selectedIndex)"></td>
+</tr><tr>
+	<td class="code" width="180">options</td>
+	<td class="texte" width="300">tableau des lignes</td>
+	<td>&nbsp;</td>
+</tr><tr>
+	<td class="code" width="180">length</td>
+	<td class="texte" width="300">Nombre de lignes</td>
+	<td><input type="button" value="Voir options.length" onclick="alert('Nombre de lignes : '+document.formselect.elements['liste'].options.length)"></td>
+</tr><tr>
+	<td class="code" width="180">&nbsp;&nbsp;&nbsp;value</td>
+	<td class="texte" width="300">Valeur d'une ligne</td>
+	<td><input type="button" value="Voir value" onclick="alert('Value de la ligne sélectionnée : '+document.formselect.elements['liste'].options[document.formselect.elements['liste'].selectedIndex].value)"></td>
+</tr><tr>
+	<td class="code" width="180">&nbsp;&nbsp;&nbsp;text</td>
+	<td class="texte" width="300">Libellé d'une ligne</td>
+	<td><input type="button" value="Voir libellé" onclick="alert('Value de la ligne sélectionnée : '+document.formselect.elements['liste'].options[document.formselect.elements['liste'].selectedIndex].text)"></td>
+</tr></tbody></table>
+<br>
+Voici le code des événements des boutons.<br>
+Pour récupérer l'indice la ligne sélectionnée :<br>
+<pre class="code js">this.form.elements['liste'].selectedIndex</pre>
+
+Pour récupérer le nombre de lignes :<br>
+<pre class="code js">this.form.elements['liste'].options.length</pre>
+
+Pour récupérer la valeur de la ligne sélectionnée :<br>
+<pre class="code js">this.form.elements['liste'].options[this.form.elements['liste'].selectedIndex].value</pre>
+
+
+<form name="farea">
+<h2 class=" tjstutoplan5232">L'accès aux éléments de type textarea</h2>
+<p>Une zone de texte multi-lignes a comme propriété principale <span class="code">value</span> qui contient le texte de la zone.<br>
+</p><table><tbody><tr>
+<td>
+<textarea rows="5" cols="30" name="zone">Ligne 1
+Ligne 2
+Dernière ligne
+</textarea>
+</td><td class="texte">
+	<input type="radio" name="mode" checked="checked">Contenu brut
+	<input type="radio" name="mode">Contenu traité
+	<br>
+	<input type="button" value="Contenu de la zone" onclick="contenu(this.form)"><br>
+</td></tr></tbody></table>
+	<script language="JavaScript">
+		function contenu(form) {
+			if (form.mode[0].checked) {
+				alert(form.zone.value);
+			} else {
+				alert(escape(form.zone.value));
+			}
+		}
+	</script>
+</form>
+
+
+<p>Pour récupérer le contenu de la zone, on utilise le classique :<br>
+</p><pre class="code js">document.forms["nom"].elements["zone"].value</pre>
+Le "contenu traité" est obtenu par l'appel de la fonction <a href="https://www.toutjavascript.com/reference/reference.php?ref=escape" class="tjs__ref help" target="_blank">escape()</a> qui convertit tous les caractères spéciaux et non visibles (tabulations, retour à la ligne, ...).<br>
+Dans notre exemple, quand "Contenu traité" est coché, on affiche :<br>
+<pre class="code js">&nbsp;escape(document.forms["nom"].elements["zone"].value)</pre>
+La fonction inverse est <a href="https://www.toutjavascript.com/reference/reference.php?ref=unescape" class="tjs__ref help" target="_blank">unescape()</a>.<br>
+
+<br><hr>
+<p>Nous avons vu dans cette page comment manipuler les éléments de formulaires avec le JavaScript.<br>
+La page suivante montre les <a href="https://www.toutjavascript.com/savoir/savoir06_3.php3">Trucs et astuces de formulaires</a> qui facilitent la saisie dans les formulaires.</p></div><div class="maj_ref"><i class="fa fa-calendar" aria-hidden="true"></i> Tutoriel écrit par webmaster mis à jour le <time datetime="2017-09-19T10:26:16+0200">19/09/2017</time></div><style>div#tjsfixedcol {}div#tjsfixedcol.fixed {position:fixed;top:5px; display: inline-block}div#tjstutoplan {margin-top:5px;margin-bottom:12px; background-color:#fff;padding-top:5px;padding-bottom:6px;border:1px solid #bbb;border-radius:4px;}div#tjstutoplan div.tjstutoplantitre {font-weight:bold; text-align:center;font-size:16px; margin-bottom:0px; }div.tjstutoplan1 {padding:2px; padding-left:5px;padding-right:5px;font-size:14px;font-weight:bold;margin-top:3px;border-left:6px solid #fff;}div.tjstutoplan2 {padding:2px; padding-left:15px;padding-right:5px;font-size:13px;font-weight:bold; border-left:6px solid #fff;}div.tjstutoplan1:hover, div.tjstutoplan2:hover {cursor:pointer;color:#fff;background-color:#31528C; border-left:6px solid #31528C;}div.tjstutoplanactive {color:#fff;background-color:#31528C; border-left:6px solid #316AC5 !important;}</style><script type="text/javascript">var divs=document.querySelector('div#tutoContainer').querySelectorAll('a');for (var i=0; i<divs.length; i++) {var a=divs[i];if (a.hasAttribute('href')) {if ( a.getAttribute('href').substring(0, 4)=='http') {a.setAttribute('target', '_blank');if (a.className=='') {a.className='external';}}}}function tjsTutoPlan() {/* Création du plan avec les h2 et h3 */var tuto=document.querySelector("div#tutoContainer");var h2s=tuto.querySelectorAll("h2");var h3s=tuto.querySelectorAll("h3");var items=[];for (var i=0; i<h2s.length; i++) {h2s[i].className+=' tjstutoplan'+h2s[i].offsetTop;items[items.length]={'niveau': 1, 'text':h2s[i].innerText, 'top': parseInt(h2s[i].offsetTop) }; } for (var i=0; i<h3s.length; i++) {h3s[i].className+=' tjstutoplan'+h3s[i].offsetTop;items[items.length]={'niveau': 2, 'text':h3s[i].innerText, 'top': parseInt(h3s[i].offsetTop) }; } /* Tri par ordre d'apparition */items.sort(function (a, b) {return a.top - b.top;});var html="<div class='tjstutoplantitre'>Plan du tutoriel</div>";for (var j=0; j<items.length; j++) {var i=items[j];html+="<div class='tjstutoplanitem tjstutoplan"+i.niveau+"' data-tjstutoplan='"+i.top+"'>"+i.text+"</div>";}document.getElementById('tjstutoplan').innerHTML=html;/* Initialisation actif du 1er item *//* document.querySelector('div.tjstutoplanitem').className+=' tjstutoplanactive'; *//* Ajout d'un div invisible pour détecter le retour de scroll */var div=document.createElement('div');div.setAttribute('id', 'tjsfixedcoldummy');document.getElementById('col-droite').insertBefore(div, document.getElementById('tjsfixedcol'));if (document.body.offsetWidth>1000) {/* Détection du scroll */window.addEventListener('scroll', function(event) {var offset=parseInt(document.querySelector("div#col-droite").offsetTop);var d=document.querySelector("div#tjsfixedcoldummy");/* Blocage/déblocage du plan */var c=document.querySelector("div#tjsfixedcol");if (c.className=='') { if ( parseInt(d.offsetTop)+offset < Math.abs(document.body.getBoundingClientRect().top) ) {c.className='fixed';c.style.width=d.getBoundingClientRect().width+'px';}} else {if ( parseInt(d.offsetTop)+offset > Math.abs(document.body.getBoundingClientRect().top) ) {c.className='';c.style.width=d.getBoundingClientRect().width+'px';}}/* Activation de l'item actif selon le scroll */var items=document.querySelectorAll('div.tjstutoplanitem');var numActif=0;for (i=0; i<items.length; i++) {var h=document.querySelector('.tjstutoplan' + items[i].dataset.tjstutoplan);if ( parseInt(h.offsetTop) + offset + 70 > Math.abs(document.body.getBoundingClientRect().top) ) {numActif=i;break;}}for (i=0; i<items.length; i++) {var c=items[i].className.replace(' tjstutoplanactive','');if (i==numActif) {items[i].className=c+' tjstutoplanactive';} else {items[i].className=c; }}});/* Clic sur item du plan */var items=document.querySelectorAll('div.tjstutoplanitem');for (i=0; i<items.length; i++) {items[i].addEventListener('click', function(event) {var offset=parseInt(document.querySelector("div#col-droite").offsetTop);var classe = '.tjstutoplan' + event.target.dataset.tjstutoplan;console.log(classe);var s=parseInt(document.querySelector(classe).offsetTop);window.scrollTo(0, s+offset-5); }); }/*var evt=new Event('scroll');*//*window.dispatchEvent(evt);*/}}document.addEventListener('DOMContentLoaded', tjsTutoPlan);</script><div class="tjs-tuto-contenu-bas"><!-- tjs-ref-contenu-bas --><ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-4954616225886678" data-ad-slot="9418442926" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent;"><ins id="aswift_2_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 775px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:775px;height:90px;" width="775" height="90" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div><div class="col-12 col-sm-4 content-stretch" id="col-droite"><div style="margin-bottom:19px; margin-top:12px; background-color:#fff; color:#000; padding:5px; box-shadow:3px 3px 3px #ccc; border-radius:5px; "><h2 style="margin-top:5px;">Mon nouveau livre Tout JavaScript chez Dunod</h2><a href="https://www.toutjavascript.com/livre/index.php" target="_blank" style="color:#000 !important; font-size:15px;"><img src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/toutjavascript.jpg" alt="Tout JavaScript le livre chez Dunod" style="margin-right: 12px; float:left; border:4px solid #fff;" width="160"><u>En savoir plus</u></a><br>Sortie le 6 février 2019<br><br>Version papier à 29€90 <br>Format électronique à 21€90.<br><br><b style="display:block;text-align:center;">Commandez en ligne</b>&nbsp;<a href="https://www.dunod.com/sciences-techniques/tout-javascript" target="_blank" class="btn btn-sm radius background-color-blue color-white cursor-pointer text-decoration-none" style="margin-bottom:3px;" onclick="trackOutboundLink('https://www.dunod.com/sciences-techniques/tout-javascript'); return false;">Dunod</a> &nbsp;<a href="https://livre.fnac.com/a12322915/Olivier-Hondermarck-Tout-Javascript" target="_blank" class="btn btn-sm radius background-color-blue color-white cursor-pointer transition text-decoration-none" style="margin-bottom:3px;" onclick="trackOutboundLink('https://livre.fnac.com/a12322915/Olivier-Hondermarck-Tout-Javascript'); return false;">Fnac</a> &nbsp;<a href="https://amzn.to/2t45j6D" target="_blank" class="btn btn-sm radius background-color-blue color-white cursor-pointer transition text-decoration-none" style="margin-bottom:3px;" onclick="trackOutboundLink('https://amzn.to/2t45j6D'); return false;">Amazon</a><br><center style="color:#999"></center><div style="clear:both"></div></div><form action="/reference/chercher.php" method="get"><h2>Chercher une fonction, un objet, ... </h2><div class="container items-center justify-space-around text-center"><div class="col-8"><input type="text" placeholder="mot clé" name="mot" class="form-control radius" style="background-color:#fff;"></div><div class="col-4"><input type="button" value="Chercher" onclick="this.form.submit()" class="btn btn-sm color-white radius background-color-green hover-background-color-blue transition-fast cursor-pointer"></div></div></form><div style="margin-bottom:19px; margin-top:12px; background-color:#fff; color:#000; padding:5px; box-shadow:3px 3px 3px #ccc; border-radius:5px;"><h2 style="margin-top:5px;">Nouveau service en ligne de TJS</h2><a href="https://www.cleanmyjs.com/fr/product.php?utm_source=TJS" target="_blank" style="color:#000 !important; font-size:15px;"><img src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/cleanmyjs.png" alt="cleanMyJS : Détectez toutes les erreurs JavaScript de vos sites" style="padding-right: 12px; float:left" width="110"><span style="font-size:20px;">cleanMyJS.com</span><br>Détectez, enregistrez et analysez toutes les erreurs JavaScript de vos sites</a><div style="clear:both"></div></div><div id="tjsfixedcoldummy"></div><div id="tjsfixedcol" class="fixed" style="width: 380px;"><div id="tjstutoplan"><div class="tjstutoplantitre">Plan du tutoriel</div><div class="tjstutoplanitem tjstutoplan1" data-tjstutoplan="100">Principe général</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="841">Accéder à un élément</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="1402">Manipuler les propriétés d'un élément</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="1555">Appeler une méthode sur un élément</div><div class="tjstutoplanitem tjstutoplan1" data-tjstutoplan="1710">Intégrer du JavaScript dans un événement</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="1745">Un exemple d'événement</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="2406">L'objet this</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="2825">Encore un exemple avec this</div><div class="tjstutoplanitem tjstutoplan1" data-tjstutoplan="3122">L'accès aux éléments de type input</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="3157">Les zones de texte</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="3336">Les boutons</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="3508">Les cases à cocher</div><div class="tjstutoplanitem tjstutoplan2" data-tjstutoplan="3819">Les radio-boutons</div><div class="tjstutoplanitem tjstutoplan1" data-tjstutoplan="4441">L'accès aux éléments de type select</div><div class="tjstutoplanitem tjstutoplan1 tjstutoplanactive" data-tjstutoplan="5232">L'accès aux éléments de type textarea</div></div><!-- tjs-ref-colonne-droite --><ins class="adsbygoogle" style="display: block; margin-top: 16px; height: 280px;" data-ad-client="ca-pub-4954616225886678" data-ad-slot="3651110926" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:380px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:380px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:380px;height:280px;" width="380" height="280" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div> </div></div></div><script id="jsminify" type="text/javascript" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/jsminify.css"></script><link rel="stylesheet" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/highlight.css"><script src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/highlight.js"></script><script>hljs.initHighlightingOnLoad();$('div#tutocontainer pre').each(function(i, block) {hljs.highlightBlock(block);});$('div#faqcontainer pre').each(function(i, block) {hljs.configure({ useBR: true});hljs.highlightBlock(block);});</script><style type="text/css">div.showCode {cursor:pointer;font-weight:bold;color:#2E8B57;}</style><link rel="stylesheet" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/fontawesome5.css"><link rel="stylesheet" href="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/all5.css"><div class="tjs__footer"><div class="container items-center justify-space-around text-center">1999-2019 | Reproduction ou diffusion interdite sans autorisation de Tout&nbsp;JavaScript.com </div><div id="tjs__footer_tops" class="container gutters items-center justify-space-around text-center"><div class="col-4 align-start"><p>Top</p><ul><li><a href="https://www.toutjavascript.com/reference/ref-window.console.log.php">console.log()</a></li><li><a href="https://www.toutjavascript.com/reference/ref-window.settimeout.php">setTimeout()</a></li><li><a href="https://www.toutjavascript.com/reference/ref-math.round.php">round()</a></li><li><a href="https://www.toutjavascript.com/reference/ref-window.document.getelementbyid.php">getElementById()</a></li><li><a href="https://www.toutjavascript.com/reference/ref-window.open.php">open()</a></li></ul></div><div class="col-4 align-start"><p>Top tutos</p><ul><li><a href="https://www.toutjavascript.com/savoir/introduction-dhtml.php">DHTML</a></li><li><a href="https://www.toutjavascript.com/savoir/savoir06.php3">Formulaires</a></li><li><a href="https://www.toutjavascript.com/savoir/savoir07.php3">Strings</a></li><li><a href="https://www.toutjavascript.com/savoir/savoir09.php3">Tableaux</a></li><li><a href="https://www.toutjavascript.com/savoir/savoir12.php3">Structure</a></li></ul></div><div class="col-4 align-start"><p>A propos</p><ul><li><a href="https://www.toutjavascript.com/info/copyright.php3">Infos sur TJS</a></li><li><a href="https://www.toutjavascript.com/contact/contact.php3">Contacts</a></li><li><a href="https://www.toutjavascript.com/livre/index.php">Mon livre Tout JavaScript chez Dunod</a></li><li><a href="https://www.toutjavascript.com/contact/jsecoin.php">How To Help</a></li></ul></div></div> </div><div class="container gutters items-center justify-space-around text-center" style="margin-top:8px;"><div class="col-6 align-start"><div class="fb-like" data-href="" data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div></div><div class="col-6 align-start"><div id="totop" class="btn btn-default" onclick="totop();"><i class="fa fa-chevron-up"></i></div>
+<script>if (document.getElementById('divexplodhtml')) {MenuExploDHTML.Start(0);}$('.tooltip').jBox('Tooltip', {theme: 'TooltipDark'});$('.help').jBox('Tooltip', {});</script></div><span style="font-size:11px; color:#ccc;">Le 21/03/2019 20:03:26 sur php7 en 14.85 ms</span></div><div id="bulle" style="position:absolute;top:0;left:0;visibility:hidden"></div><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_4885485573990" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="Acc%C3%A9der%20au%20formulaire%20par%20JavaScript%20-%20Les%20tutoriaux%20de%20Tout%20JavaScript.com_fichiers/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-4954616225886678"></iframe></html>

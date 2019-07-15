@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>TP Individuel</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<meta charset="utf-8"/>
+		<link rel="icon" type="shorcut icon" href="img/favicon.png"/>
+		<script type='text/javascript'></script>
+	</head>
+	<body>
+		<h1>Travail Pratique</h1>
+		<h2>Les types de champs HTML5</h2>
+		<dl>
+			<dt>
+				<label for="date">Date</label>
+			</dt>
+			<dd>
+				<input type="date" id="date"/>
+			</dd>
+			<dt>
+				<label for="datetime">Datetime</label>
+			</dt>
+			<dd>
+				<input type="datetime" id="datetime"/>
+			</dd>
+			<dt>
+				<label for="datetime-local">Datetime-local</label>
+			</dt>
+			<dd>
+				<input type="datetime-local" id="datetime-local"/>
+			</dd>
+			<dt>
+				<label for="email">E-mail</label>
+			</dt>
+			<dd>
+				<input type="email" id="email"/>
+			</dd>
+			<dt>
+				<label for="month">Month</label>
+			</dt>
+			<dd>
+				<input type="month" id="month"/>
+			</dd>
+			<dt>
+				<label for="number">Number</label>
+			</dt>
+			<dd>
+				<input type="number" id="number"/>
+			</dd>
+		</dl>
+		<dl class="second-list">
+			<dt>
+				<label for="search">Search</label>
+			</dt>
+			<dd>
+				<input type="search" id="search"/>
+			</dd>
+			<dt>
+				<label for="tel">Tel</label>
+			</dt>
+			<dd>
+				<input type="tel" id="tel"/>
+			</dd>
+			<dt>
+				<label for="time">Time</label>
+			</dt>
+			<dd>
+				<input type="time" id="time"/>
+			</dd>
+			<dt>
+				<label for="url">URL</label>
+			</dt>
+			<dd>
+				<input type="url" id="url"/>
+			</dd>
+			<dt>
+				<label for="week">Week</label>
+			</dt>
+			<dd>
+				<input type="week" id="week"/>
+			</dd>
+		</dl>
+		
+		<!-- calcule de la taxe à retenir sur un prix d’un article entré dans un champs -->
+		
+		<div class="field"><fieldset>
+			<legend><span>Prix Toutes Taxes Comprises</span></legend>
+			<form>
+				<label for="prix">Prix de l'article:</label>
+				<input type="text" name="prix" id="prix"/>
+				<input type="submit" value="Calculer" onclick="calcTaxe();"/>
+			</form>
+		</fieldset>
+		<br/><br/>
+		<fieldset>
+			<legend class="date"><span>La date et l'heure du jour</span></legend>
+			<form class="date">
+				<script>
+					(function FrenchDate(){
+				var jr = new Array("Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam");
+			    var mois = new Array("Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec");
+				var date = new Date();
+				var info = jr[date.getDay()] + " ";
+					info += date.getDate() + " ";
+					info += mois[date.getMonth()] + " ";
+					info += date.getFullYear();
+					
+				var heure = date.getHours();
+				var minutes = date.getMinutes();
+				if(minutes < 10)
+					 minutes = "0" + minutes;
+					 var FrencHour =  heure + ":" + minutes;
+		
+				return document.write(info+", "+FrencHour);
+			}())
+				</script>
+				<!--<label for="date">Voulez-vous savoir la date du jour ? </label>
+				<input type="submit" value="Cliquer ici" id="date" onclick="FrenchDate();"/>-->	
+			</form>
+		</fieldset>
+		<br/><br/>
+		<fieldset>
+			<legend>Existance d'un element</legend>
+			<form>
+				<h3>tableau = [83, 89, 74, 92, -80, 74, 19, 90, 173, -3, 929, 9]</h3>
+				<label for="element">Choisir un element du tableau:</label>
+				<input type="number" id="element"/>
+				<input type="submit" value="Verifier" onclick="verifElement();"/>
+			</form>
+		</fieldset></div>
+		
+		<!--Partie des scripts JS-->
+		<!-- Premiere fonction JS associee au formulaire ci haut-->
+		<script type="text/javascript">
+			function calcTaxe(){
+				var pht = document.getElementById("prix").value;
+				var taux = 19.5;
+				var pttc = (1 + taux / 100) * pht;
+				
+				if(pht != ""){
+					if(isNaN(pht) == false){
+						if(pht >= 1){
+							alert("Bravo! Montant net a payer: "+pttc+" FCFA");
+							return true;
+						}else{
+							alert("ton Prix est invalide");
+							return false;
+						}
+					}else{
+						alert("renseigne un prix valide.");
+						return false;
+					}
+				}else{
+					alert("Attention! renseigner le prix de l'article");
+					return false;
+				}
+				
+			}
+			
+			function FrenchDate(){
+				var jr = new Array("Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam");
+			    var mois = new Array("Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec");
+				var date = new Date();
+				var info = jr[date.getDay()] + " ";
+					info += date.getDate() + " ";
+					info += mois[date.getMonth()] + " ";
+					info += date.getFullYear();
+					
+				var heure = date.getHours();
+				var minutes = date.getMinutes();
+				if(minutes < 10)
+					 minutes = "0" + minutes;
+					 var FrencHour =  heure + ":" + minutes;
+		
+				return alert(info+", "+FrencHour);
+			}
+			
+			function verifElement(){
+				var x = document.getElementById("element").value;
+				var tab = [83, 89, 74, 92, -80, 74, 19, 90, 173, -3, 929, 9];
+				if(x != ""){
+					for(var i = 0, c = tab.length; i < c; i++){
+						return alert((tab.indexOf(parseInt(x)) != -1));
+					}
+				}else{
+					alert("Veuillez choisir un element du tableau!");
+				}
+				
+			}
+		</script>
+	</body>
+</html>
